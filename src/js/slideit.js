@@ -1,3 +1,6 @@
 /**
  * @author Marc Bächinger
  */
+(function() {
+	
+}());
