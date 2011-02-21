@@ -6,86 +6,149 @@
   <meta name="viewport" content="width=device-width; initial-scale=1.0" />
   
   <title>Slideshow</title>
-  <!-- css stylesheets -->
-  <link href="qunit.css" type="text/css" rel="stylesheet">
   <!-- javascript imports -->
-  <script src="http://code.jquery.com/jquery-latest.js" type="text/javascript"></script>
+  <script src="jquery-1.5.js" type="text/javascript"></script>
   <script src="../src/js/slideit.js" type="text/javascript"></script>
   
   <script type="text/javascript">
     $(document).ready(function(){
-		$('.display')
+		$('article')
 			.slideit({
-				duration: 25000
+				duration: 250
 			});
 	});
   </script>
   <style type="text/css">
-  	.slide-dimension {
-		width: 600px;
-		height: 680px;
+  	body {
+  		color: #333;
   	}
-  	.slide-1 {
-  		background-color: red;
+  	
+  	article {
+  		display: block;
+		width: 1024px;
+		height: 628px;
   	}
-  	.slide-2 {
-  		background-color: blue;
+  	
+  	.safari, .firefox, .ie, .opera, .chrome {
+  		float: left;
+  		height: 128px;
+  		width: 128px;
+  		overflow: hidden;
   	}
-  	.slide-3 {
-  		background-color: green;
+  	.chrome {
+  		background-image: url(browser_logos-128.png);
+  		background-position: -12px;
+  	}
+  	.firefox {
+  		background-image: url(browser_logos-128.png);
+  		background-position: -158px;
+  	}
+  	.opera {
+  		background-image: url(browser_logos-128.png);
+  		background-position: -300px;
+  	}
+  	.safari {
+  		background-image: url(browser_logos-128.png) ;
+  		background-position: -432px;
+  	}
+  	.ie {
+  		background-image: url(browser_logos-128.png);
+  		background-position: -574px;
+  	}
+  	
+	
+  	.slide-dimension label {
+  		font-size: 48px;
+  		font-family: "Arial Black";
+  		margin-top: 24px;
+  		display: block;
+  		float: left;
+  		margin-left: 36px;	
+  	}
+  	
+  	.slideit-trigger { 
+  		background-color: #dedede; 
+  		border-radius: 4px;
+  		-moz-border-radius: 4px;
+  		border: #999 1px solid;
+  		cursor: pointer;
+  		float: left;
+  		font-family: "Arial Black", Arial, Helvetica, sans-serif;
+  		font-size: 12px; 
+  		height: 16px; 
+  		padding: 0px 4px 2px 4px;
+  		margin-left: 6px;
+  		text-align: center;
+  		width: 120px; 
+	}
+	
+	.slideit-trigger:hover {
+  		background-color: #999;
+  		color: #dedede; 
+	}
+	.slideit-trigger-selected {
+  		background-color: #999;
+	}
+	
+  	#slideshow-menu {
+  		margin-bottom: 12px;	
+  		height: 24px;
+  	}
+  	
+  	.slideit-toc-overlay {
+  		background-color: #fff;
+  		border-radius: 6px;
+  		box-shadow: 5px 5px 15px #333, -5px 5px 15px #333, 5px -5px 15px #333, -5px -5px 15px #333;
+  		top: 20px; left: 20px;
+  		opacity: 1;
+  		overflow-x: hidden;
+  		overflow-y: auto;
+		width: 80%; min-height: 80%;
+  		-moz-border-radius: 6px;
+  		-moz-box-shadow: 5px 5px 15px #333, -5px 5px 15px #333, 5px -5px 15px #333, -5px -5px 15px #333;
+  		-webkit-border-radius: 6px;
+  		-webkit-box-shadow: 5px 5px 15px #333, -5px 5px 15px #333, 5px -5px 15px #333, -5px -5px 15px #333;
+  	}
+  	
+  	.slideit-toc-overlay ul {
+  		margin-left: 80px;
+  		margin-right: 80px;
+		font-family: "Arial Black";
+		font-size: 52px;
+		list-style-type: none;
+  	}
+  	
+  	.slideit-toc-overlay ul li {
+  		cursor: pointer;
   	}
   </style>
 </head>
 
 <body>
-	
-	<div>
-		<a href="#" onclick="$('#display-1').slideit('next');return false;">
-			next
-		</a>
-		<a href="#previous" onclick="$('#display-1').slideit('previous');return false;">
-			previous
-		</a>
-	</div>
-	<div id="display-1" class="display slide-dimension">
-		<div class="slide-1 slide-dimension">
-			<ul>
-				<li>sadasd</li>
-				<li>sadasd</li>
-				<li>sadasd</li>
-				<li>sadasd</li>
-			</ul>
-		</div>
-		<div class="slide-2 slide-dimension">
-			<ul>
-				<li>sadasd</li>
-				<li>sadasd</li>
-				<li>sadasd</li>
-				<li>sadasd</li>
-			</ul>
-		</div>
-		<div class="slide-3 slide-dimension">
-			<ul>
-				<li>sadasd</li>
-				<li>sadasd</li>
-				<li>sadasd</li>
-				<li>sadasd</li>
-			</ul>
-		</div>
-	</div>
-adsdasdasasd<br/>
-adsdasdasasd<br/>
-adsdasdasasd<br/>
-adsdasdasasd<br/>
-adsdasdasasd<br/>
-adsdasdasasd<br/>
-adsdasdasasd<br/>
-adsdasdasasd<br/>
-adsdasdasasd<br/>
-adsdasdasasd<br/>
-adsdasdasasd<br/>
-adsdasdasasd<br/>
-adsdasdasasd<br/>
-adsdasdasasd<br/>
+	<article class="slide-dimension" data-menu-id="slideshow-menu">
+		<section title="Index">
+			<label>PresentMLJ(C)SS</label>
+		</section>
+		<section title="Safari">
+			<div class="safari"></div>
+			<label>2 - Safari</label>
+		</section>
+		<section title="Firefox">
+			<div class="firefox"></div>
+			<label>3 - Firefox</label>
+		</section>
+		<section title="Internet Explorer">
+			<div class="ie"></div>
+			<label>4 - Internet Explorer</label>
+		</section>
+		<section title="Opera">
+			<div class="opera"></div>
+			<label>5 - Opera</label>
+		</section>
+		<section Atitle="Opera 2">
+			<div class="opera"></div>
+			<label>6 - Opera</label>
+		</section>
+	</article>
 </body>
 </html>
